@@ -1,0 +1,13 @@
+{
+  "name": "mia-push-angular",
+  "version": "0.0.1",
+  "main": "src/angular-mia-push.js",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "socket.io-client": "^2.0.3"
+  },
+  "devDependencies": {}
+}
