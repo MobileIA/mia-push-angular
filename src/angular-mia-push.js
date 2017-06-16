@@ -10,7 +10,7 @@
     function mobileiaPush(mobileiaAuth, $rootScope) {
         var socket = null;
         var isConnected = false;
-        var baseUrl = 'http://localhost:8080/';
+        var baseUrl = 'http://push.mobileia.com:8080/';
         
         var service = {
             init: init,
