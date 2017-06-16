@@ -41,7 +41,11 @@
         };
         
         function emit(event, message, callback){
-            socket.emit('miapush_event', {event: event, message: message}, callback);
+            socket.emit('miapush_event', {event: event, message: message}, function(){
+                $rootScope.$apply(function (msg) {
+                    callback(msg);
+                });
+            });
         };
 
     }
