@@ -34,15 +34,15 @@
         
         function on(event, callback){
             socket.on(event, function(msg){
-                $rootScope.$apply(function () {
+                $rootScope.$apply(function(){
                     callback(msg);
                 });
             });
         };
         
         function emit(event, message, callback){
-            socket.emit('miapush_event', {event: event, message: message}, function(){
-                $rootScope.$apply(function (msg) {
+            socket.emit('miapush_event', {event: event, message: message}, function(msg){
+                $rootScope.$apply(function(){
                     callback(msg);
                 });
             });
