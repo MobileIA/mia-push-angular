@@ -27,7 +27,13 @@
                 return false;
             }
             // Iniciamos socket
-            socket = io.connect(baseUrl, {query: 'appId=' + mobileiaAuth.getAppId() + '&accessToken=' + mobileiaAuth.getAccessToken()});
+            socket = io.connect(baseUrl, {
+                query: 'appId=' + mobileiaAuth.getAppId() + '&accessToken=' + mobileiaAuth.getAccessToken(),
+                reconnection: true,
+                reconnectionDelay: 1000,
+                reconnectionDelayMax : 5000,
+                reconnectionAttempts: 99999
+            });
             // Seteamos variable que se inicio socket
             isConnected = true;
         };
