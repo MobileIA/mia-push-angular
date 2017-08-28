@@ -32,7 +32,9 @@
                 reconnection: true,
                 reconnectionDelay: 1000,
                 reconnectionDelayMax : 5000,
-                reconnectionAttempts: 99999
+                reconnectionAttempts: 99999,
+                timeout : 5000, 
+                'connect timeout': 5000
             });
             // Seteamos variable que se inicio socket
             isConnected = true;
