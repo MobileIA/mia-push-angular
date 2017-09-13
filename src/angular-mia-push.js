@@ -15,7 +15,8 @@
         var service = {
             init: init,
             on: on,
-            emit: emit
+            emit: emit,
+            reconnect: reconnect
         };
         
         return service;
@@ -33,7 +34,7 @@
                 reconnectionDelay: 1000,
                 reconnectionDelayMax : 5000,
                 reconnectionAttempts: 99999,
-                timeout : 5000, 
+                timeout : 5000,
                 'connect timeout': 5000
             });
             // Seteamos variable que se inicio socket
@@ -55,6 +56,14 @@
                 });
             });
         };
-
+        /**
+         * Funcion que se encarga de conectar nuevamente el socket
+         */
+        function reconnect(){
+            if (socket.socket.connected === false && socket.socket.connecting === false) {
+                // use a connect() or reconnect() here if you want
+                socket.socket.connect();
+           }
+        };
     }
 })();
