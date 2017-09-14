@@ -16,7 +16,8 @@
             init: init,
             on: on,
             emit: emit,
-            reconnect: reconnect
+            reconnect: reconnect,
+            disconnect: disconnect
         };
         
         return service;
@@ -60,10 +61,13 @@
          * Funcion que se encarga de conectar nuevamente el socket
          */
         function reconnect(){
-            if (socket.socket.connected === false && socket.socket.connecting === false) {
-                // use a connect() or reconnect() here if you want
-                socket.socket.connect();
-           }
+            socket.connect();
+        };
+        /**
+         * Funcion para desconectar
+         */
+        function disconnect(){
+            socket.disconnect();
         };
     }
 })();
